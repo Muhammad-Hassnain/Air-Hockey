@@ -11,6 +11,7 @@ A two player game using basic C++.
 using namespace std;
 
 // These three functions below are used to update the coordinate of ball depending upon the difficulty level
+
 int easy(int &x , int &y , int direction)
 {
     if (direction==1)
@@ -35,7 +36,6 @@ int easy(int &x , int &y , int direction)
             x++ ;
             y-- ;
         }
-
 }
 
 int medium(int &x , int &y , int direction)
@@ -212,8 +212,6 @@ void SeeScores()
 }
 
 
-
-
 int main()
 {
 
@@ -353,7 +351,8 @@ int main()
    while (1)
   {
       //These if are being used to update the position of ball as well as change direction after encounter of each boundary
-        if((x==44) && (y==2))
+
+       if((x==44) && (y==2))
         {
             if(direction == 1)
             {
@@ -416,7 +415,10 @@ int main()
         {
            hard(x,y,direction) ;
         }
-       // These statements are used to see if control key is pressed or not
+       
+                                                             
+        // These statements are used to see if control key is pressed or not
+        
         if (kbhit())
         {
           control = getch() ;
@@ -430,8 +432,10 @@ int main()
         {
             break ;
         }
+        
         //These if are used to update the position of board when key is pressed
         // These are player one controls
+        
         if((skate1min>=2) && (skate1max<=25))
            {
                if(skate1min-1!=1)
@@ -475,7 +479,8 @@ int main()
         }
 
        // Making the board , ball , skate as well as empty space in board
-             for (int i = 1 ; i<=26 ; i++) // y axis
+        
+        for (int i = 1 ; i<=26 ; i++) // y axis
         {
             for (int j=1 ; j<=45 ; j++) // x axis
             {
@@ -524,8 +529,10 @@ int main()
                 playerOneScore++ ;
             }
 
-        // This statement is too make ball bounce from boundary walls not the goal ones
         }
+        
+        // This statement is too make ball bounce from boundary walls not the goal ones
+        
         else if ((y==25) && ((x>=3) && (x<=43)))
         {
             if (direction == 1)
@@ -537,7 +544,9 @@ int main()
                 direction = 3;
             }
         }
-            // This statement is also used to bounce ball from a boundary wall
+           
+        // This statement is also used to bounce ball from a boundary wall
+        
         else if ((y==2) && ((x>=3) && (x<=43)))
         {
             if (direction==3)
@@ -549,8 +558,10 @@ int main()
                 direction=1;
             }
         }
-           // These statements are used to make the ball bounce back from the skate
-           else if (((y==skate1min)&&(x==5))|| (y==skate1min+1)&&(x==5) || (y==skate1min+2)&&(x==5) ||((y==skate1max)&&(x==5)))
+        
+         // These statements are used to make the ball bounce back from the skate
+         
+         else if (((y==skate1min)&&(x==5))|| (y==skate1min+1)&&(x==5) || (y==skate1min+2)&&(x==5) ||((y==skate1max)&&(x==5)))
             {
                 if(direction==2)
                 {
@@ -561,7 +572,9 @@ int main()
                     direction=4 ;
                 }
             }
+            
             //These statements are increasing the score in case if miss
+            
               else if ((x==2)&&((y>=3)&&(y<=24)))
                 {
                     if(direction==2)
